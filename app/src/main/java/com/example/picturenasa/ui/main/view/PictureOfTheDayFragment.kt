@@ -10,6 +10,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import coil.api.load
 import com.example.picturenasa.R
@@ -33,7 +34,7 @@ class PictureOfTheDayFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<ConstraintLayout>
     private val viewModel: PictureOfTheDayViewModel by lazy {
-        ViewModelProviders.of(this).get(PictureOfTheDayViewModel::class.java)
+        ViewModelProvider(this).get(PictureOfTheDayViewModel::class.java)
     }
 
 
