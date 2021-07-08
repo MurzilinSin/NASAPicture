@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.*
+import android.widget.MediaController
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -11,12 +12,11 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import coil.api.load
 import com.example.picturenasa.R
 import com.example.picturenasa.databinding.FragmentPictureDayBinding
 import com.example.picturenasa.ui.main.MainActivity
-import com.example.picturenasa.ui.main.chips.ChipsFragment
+import com.example.picturenasa.ui.main.settings.SettingsFragment
 import com.example.picturenasa.ui.main.picture.PictureOfTheDayData
 import com.example.picturenasa.ui.main.viemodel.PictureOfTheDayViewModel
 import com.google.android.material.bottomappbar.BottomAppBar
@@ -46,10 +46,10 @@ class PictureOfTheDayFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        viewModel.getData(setDate(TODAY)).observe(this@PictureOfTheDayFragment as LifecycleOwner,Observer<PictureOfTheDayData> {renderData(it)})
+        binding.videoOfTheDay.visibility = View.GONE
+        viewModel.getData(setDate(TODAY)).observe(viewLifecycleOwner,Observer<PictureOfTheDayData> {renderData(it)})
         setBottomBehaviour(binding.includedBottomSheet.bottomSheetContainer)
-        setBottomAppBar(view)
+        setBottomAppBar()
         binding.inputLayout.setEndIconOnClickListener {
             startActivity(Intent(Intent.ACTION_VIEW).apply {
                 data = Uri.parse("https://en.wikipedia.org/wiki/${binding.inputEditText.text.toString()}")
@@ -69,6 +69,7 @@ class PictureOfTheDayFragment : Fragment() {
                     }
                 }
         }
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -84,13 +85,13 @@ class PictureOfTheDayFragment : Fragment() {
                 requireActivity()
                         .supportFragmentManager
                         .beginTransaction()
-                        .replace(R.id.container, ChipsFragment())
+                        .replace(R.id.container, SettingsFragment())
                         .addToBackStack("")
                         .commitAllowingStateLoss()
             }
             android.R.id.home -> {
                 activity?.let {
-                    BottomNavigationDrawerFragment.newInstance().show(requireFragmentManager(), "tag")
+                    BottomNavigationDrawerFragment.newInstance().show(parentFragmentManager, "tag")
                 }
             }
         }
@@ -101,21 +102,39 @@ class PictureOfTheDayFragment : Fragment() {
         when(data) {
             is PictureOfTheDayData.Success -> {
                 val serverResponseData = data.serverResponseData
-                println(serverResponseData)
-                val url = serverResponseData.hdurl
+                val url = serverResponseData.url
+                println(url)
                 val explanation = serverResponseData.explanation
                 val title = serverResponseData.title
                 if (url.isNullOrEmpty()) {
                     //showError()
                 } else {
 //                    showSuccess()
+                    println(serverResponseData.media_type)
                     binding.includedBottomSheet.bottomSheetDescription.text = explanation
                     binding.includedBottomSheet.bottomSheetDescriptionHeader.text = title
-                    binding.imageView.load(url) {
-                        lifecycle(this@PictureOfTheDayFragment)
-                        error(R.drawable.ic_load_error_vector)
-                        placeholder(R.drawable.ic_no_photo_vector)
+                    when(serverResponseData.media_type) {
+                        "video" -> {
+                            println("МЫ ПРИШЛИ СЮДА")
+                            binding.videoOfTheDay.visibility = View.VISIBLE
+                            binding.imageView.visibility = View.GONE
+                            binding.videoOfTheDay.setVideoPath(url)
+                            binding.videoOfTheDay.setMediaController(MediaController(context))
+                            binding.videoOfTheDay.requestFocus(0)
+                            binding.videoOfTheDay.start()
+                        }
+                        "image" -> {
+                            binding.imageView.visibility = View.VISIBLE
+                            binding.videoOfTheDay.visibility = View.GONE
+                            binding.imageView.load(url) {
+                                lifecycle(this@PictureOfTheDayFragment)
+                                error(R.drawable.ic_load_error_vector)
+                                placeholder(R.drawable.ic_no_photo_vector)
+                            }
+                        }
                     }
+
+
                 }
 
             }
@@ -137,7 +156,7 @@ class PictureOfTheDayFragment : Fragment() {
         bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
     }
 
-    private fun setBottomAppBar(view: View) {
+    private fun setBottomAppBar() {
         val context = activity as MainActivity
         context.setSupportActionBar(binding.bottomAppBar)
         setHasOptionsMenu(true)
@@ -164,18 +183,18 @@ class PictureOfTheDayFragment : Fragment() {
         var calendar = Calendar.getInstance()
         calendar.time = currentDate
         /*calendar.add(Calendar.DATE,step)*/
-        when(time) {
+        return when(time) {
             "Yesterday" -> {
                 calendar.add(Calendar.DATE,-1)
-                return sdf.format(calendar.time)
+                sdf.format(calendar.time)
             }
             "Before Yesterday" -> {
                 calendar.add(Calendar.DATE,-2)
-                return sdf.format(calendar.time)
+                sdf.format(calendar.time)
             }
             else -> {
                 calendar.add(Calendar.DATE,0)
-                return sdf.format(calendar.time)
+                sdf.format(calendar.time)
             }
         }
     }

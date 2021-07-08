@@ -28,11 +28,6 @@ class PictureOfTheDayViewModel(
         if(apiKey.isBlank()) {
             PictureOfTheDayData.Error(Throwable("You need API key"))
         } else {
-            println(retrofitImpl.getRetrofitImpl())
-            val sdf = SimpleDateFormat("yyyy-MM-dd")
-            val calendar = Calendar.getInstance()
-
-            println(calendar)
             retrofitImpl.getRetrofitImpl().getPictureOfTheDay(apiKey,date).enqueue(object :
             Callback<PODServerResponseData> {
                 override fun onResponse(

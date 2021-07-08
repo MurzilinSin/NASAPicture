@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppShapeAppearance.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">8dp</item>
+    </style>
+    <style name="AppShapeAppearance.MediumComponent"
+        parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">8dp</item>
+    </style>
+    <style name="AppButton" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">?attr/colorSecondary</item>
+    </style>
+    <style name="AppTextField" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="boxBackgroundColor">?attr/colorOnSecondary</item>
+        <item name="shapeAppearance">@style/AppShapeAppearance.MediumComponent</item>
+    </style>
+    <style name="AppCard">
+        <item name="cardElevation">12dp</item>
+        <item name="cardBackgroundColor">?attr/colorSecondary</item>
+    </style>
+    <style name="AppChipDefault" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="android:backgroundTint">?attr/colorOnSecondary</item>
+        <item name="rippleColor">#FF0707</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+    <style name="marsBottomSheet" parent="Widget.MaterialComponents.BottomAppBar">
+        <item name="android:backgroundTint">#FD5C5C</item>
+    </style>
+    <style name="marsAppShapeAppearance.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">27dp</item>
+    </style>
+    <style name="marsFab" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="android:backgroundTint">#CD0505</item>
+        <item name="shapeAppearanceOverlay">
+            @style/marsAppShapeAppearance.SmallComponent
+        </item>>
+    </style>
+    <style name="marsBackground">
+        <item name="android:background">@drawable/mars</item>
+    </style>
+    <style name="bottomSheet">
+        <item name="android:background">?attr/colorOnSecondary</item>
+    </style>
+</resources>
