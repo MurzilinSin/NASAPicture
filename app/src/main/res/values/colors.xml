@@ -3,6 +3,7 @@
     <color name="colorPrimary">#91BEE1</color>
     <color name="colorPrimaryVariant">#cfcfcf</color>
     <color name="colorPrimaryDark">#A4AFEA</color>
+    <color name="colorPrimaryDark40Alpha">#66A4AFEA</color>
     <color name="colorOnPrimary">#fafafa</color>
     <color name="colorSecondary">#9fa8da</color>
     <color name="colorSecondaryVariant">#6f79a8</color>
@@ -24,4 +25,5 @@
     <color name="background_bottom_sheet">#f6d6fa</color>
     <color name="text_header_description">#000</color>
     <color name="background">#EAECFA</color>
+    <color name="blackTransparent">#BF000000</color>
 </resources>

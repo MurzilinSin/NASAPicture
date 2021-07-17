@@ -18,7 +18,7 @@
     </style>
     <style name="AppCard">
         <item name="cardElevation">12dp</item>
-        <item name="cardBackgroundColor">?attr/colorSecondary</item>
+        <item name="cardBackgroundColor">@color/blackTransparent</item>
     </style>
     <style name="AppChipDefault" parent="Widget.MaterialComponents.Chip.Choice">
         <item name="android:backgroundTint">?attr/colorOnSecondary</item>

@@ -14,4 +14,6 @@
     <dimen name="chip_with_icon_padding">10dp</dimen>
     <dimen name="button_margin_start">16dp</dimen>
     <dimen name="button_margin_top">16dp</dimen>
+    <dimen name="swipe_indicator_margin">7dp</dimen>
+    <dimen name="container_swipe_margin_bottom">20dp</dimen>
 </resources>
