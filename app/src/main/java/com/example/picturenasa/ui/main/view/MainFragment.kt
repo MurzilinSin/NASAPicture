@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.picturenasa.databinding.FragmentMainBinding
+import com.example.picturenasa.databinding.FragmentMainStartBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
 const val TODAY = "Today"
@@ -15,11 +16,11 @@ const val YESTERDAY = "Yesterday"
 const val BEFORE_YESTERDAY = "Before"
 
 class MainFragment : Fragment() {
-    private var _binding : FragmentMainBinding? = null
+    private var _binding : FragmentMainStartBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        _binding = FragmentMainBinding.inflate(inflater,container,false)
+        _binding = FragmentMainStartBinding.inflate(inflater,container,false)
         return binding.root
     }
 
