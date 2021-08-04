@@ -4,9 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.picturenasa.BuildConfig
-import com.example.picturenasa.ui.main.marsWeather.MRPRetrofitImpl
-import com.example.picturenasa.ui.main.marsWeather.MRPServerResponseData
-import com.example.picturenasa.ui.main.marsWeather.MarsRoverPhotoData
+import com.example.picturenasa.ui.main.marsRoverPhoto.MRPRetrofitImpl
+import com.example.picturenasa.ui.main.marsRoverPhoto.MRPServerResponseData
+import com.example.picturenasa.ui.main.marsRoverPhoto.MarsRoverPhotoData
 
 import retrofit2.Call
 import retrofit2.Callback
@@ -29,9 +29,6 @@ class MarsCuriosityPhotoViewModel(
         if(apiKey.isBlank()) {
             MarsRoverPhotoData.Error(Throwable("You need API key"))
         } else {
-            var sdf = SimpleDateFormat("YYYY-M-d")
-            var currentDate = Date()
-            val today = sdf.format(currentDate)
             retrofitImpl.getRetrofitImpl().getMarsPhoto(nameRover, date ,apiKey).enqueue(object :
                     Callback<MRPServerResponseData> {
                 override fun onResponse(

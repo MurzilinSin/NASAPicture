@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.picturenasa.databinding.FragmentMainBinding
 import com.example.picturenasa.databinding.FragmentMainStartBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -38,7 +37,7 @@ class MainFragment : Fragment() {
 
         binding.indicator.setViewPager(binding.viewPager)
         setCustomTabs()
-
+        binding.viewPager.setPageTransformer(ZoomOutPageTransformer())
     }
     private fun setCustomTabs() {
         binding.tabLayout.getTabAt(0)?.text = "Today"

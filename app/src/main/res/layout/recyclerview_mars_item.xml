@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/photos_container"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#FDF6F6"
+    android:layout_marginTop="5dp"
+    android:layout_marginEnd="10dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginBottom="5dp"
+    android:paddingBottom="15dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/walleImageView"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_margin="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintCircleRadius="89dp"
+        app:srcCompat="@drawable/walle_circle"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/marsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:text="Mars Photo"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/walleImageView"
+        app:layout_constraintStart_toEndOf="@+id/walleImageView"
+        app:layout_constraintTop_toTopOf="@+id/walleImageView" />
+
+    <LinearLayout
+        android:id="@+id/description_photo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/walleImageView">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.example.picturenasa.util.EquilateralImageView
+                android:id="@+id/image_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:padding="15dp"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/photo_of_the_day_stub"
+                android:scaleType="fitCenter"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/rover_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingEnd="16dp"
+                android:paddingBottom="16dp"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toTopOf="@+id/rover_id"
+                app:layout_constraintEnd_toEndOf="@+id/image_view"
+                tools:text="ROVER NAME"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/rover_id"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:paddingEnd="16dp"
+                android:paddingBottom="16dp"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toTopOf="@+id/launch_date"
+                app:layout_constraintEnd_toEndOf="@+id/image_view"
+                tools:text="ROVER ID"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/launch_date"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:paddingEnd="16dp"
+                android:paddingBottom="16dp"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toTopOf="@+id/landing_date"
+                app:layout_constraintEnd_toEndOf="@+id/image_view"
+                tools:text="Launch date"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/landing_date"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:paddingEnd="16dp"
+                android:paddingBottom="16dp"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/image_view"
+                app:layout_constraintEnd_toEndOf="@+id/image_view"
+                tools:text="Landing date"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

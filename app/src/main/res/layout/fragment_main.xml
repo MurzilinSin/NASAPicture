@@ -4,13 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:id="@+id/mini_boss_container">
 
     <androidx.constraintlayout.motion.widget.MotionLayout
         android:id="@+id/motion"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
         app:layoutDescription="@xml/motion_scene"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,31 +57,34 @@
     <LinearLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_height="0dp"
         android:paddingStart="10dp"
         android:paddingEnd="10dp"
+        android:orientation="vertical"
         app:layout_constraintTop_toBottomOf="@+id/motion"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tab_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_top_16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/input_layout"
+            app:layout_constraintTop_toTopOf="parent"
             app:tabGravity="fill" />
-
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/view_pager"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_weight="1"
             android:layout_marginTop="@dimen/margin_top_16dp"
-            android:layout_weight="1" />
+            app:layout_constraintTop_toBottomOf="@id/tab_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/indicator"/>
 
         <me.relex.circleindicator.CircleIndicator3
             android:id="@+id/indicator"
@@ -91,6 +96,7 @@
             app:ci_drawable_unselected="@drawable/swipe_indicator_passive"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view_pager" />
+            app:layout_constraintTop_toBottomOf="@+id/main" />
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
