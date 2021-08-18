@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/bottom_view_picture"
+        android:icon="@drawable/house"
+        android:title="APOD" />
+    <item
+        android:id="@+id/bottom_view_mars"
+        android:icon="@drawable/ic_mars"
+        android:title="Mars" />
+    <item
+        android:id="@+id/bottom_view_weather"
+        android:icon="@drawable/ic_system"
+        android:title="Weather" />
+
+    <item
+        android:id="@+id/bottom_view_settings"
+        android:icon="@drawable/ic_settings_menu"
+        android:title="Settings" />
+</menu>

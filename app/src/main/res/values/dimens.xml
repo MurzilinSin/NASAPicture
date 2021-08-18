@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="corner_radius">15dp</dimen>
+    <dimen name="spacing_medium">10dp</dimen>
+    <dimen name="margin_top_16dp">16dp</dimen>
+    <dimen name="margin_top_40dp">40dp</dimen>
+    <dimen name="padding">10dp</dimen>
+    <dimen name="width_view_line">25dp</dimen>
+    <dimen name="height_view_line">1dp</dimen>
+    <dimen name="peek_height">100dp</dimen>
+    <dimen name="margin_top_bottom_sheet_line">5dp</dimen>
+    <dimen name="chip_margin_end">10dp</dimen>
+    <dimen name="chip_groups_margin_top">16dp</dimen>
+    <dimen name="chip_with_icon_padding">10dp</dimen>
+    <dimen name="button_margin_start">16dp</dimen>
+    <dimen name="button_margin_top">16dp</dimen>
+    <dimen name="swipe_indicator_margin">7dp</dimen>
+    <dimen name="container_swipe_margin_bottom">20dp</dimen>
+</resources>

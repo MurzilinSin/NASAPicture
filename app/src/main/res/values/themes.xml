@@ -1,0 +1,39 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="DefaultTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
+        <item name="colorSecondary">#7F92FB</item>
+        <item name="colorSecondaryVariant">@color/colorSecondaryVariant</item>
+        <item name="colorOnSecondary">@color/colorOnSecondary</item>
+        <item name="colorError">@color/colorError</item>
+        <item name="colorOnError">@color/colorOnError</item>
+        <item name="colorSurface">@color/colorSurface</item>
+        <item name="colorOnSurface">@color/colorOnSurface</item>
+        <item name="colorOnBackground">@color/colorOnBackground</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="shapeAppearanceSmallComponent">@style/AppShapeAppearance.SmallComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/AppShapeAppearance.MediumComponent</item>
+        <item name="materialButtonStyle">@style/AppButton</item>
+        <item name="textInputStyle">@style/AppTextField</item>
+        <item name="materialCardViewStyle">@style/AppCard</item>
+        <item name="chipStyle">@style/AppChipDefault</item>
+        <item name="android:fragment">@style/bottomSheet</item>
+    </style>
+
+    <style name="MarsTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#D64B41</item>
+        <item name="colorPrimaryDark">#D32F2F</item>
+        <item name="colorAccent">#9C1E1E</item>
+        <item name="bottomAppBarStyle">@style/marsBottomSheet</item>
+        <item name="floatingActionButtonStyle">@style/marsFab</item>
+    </style>
+
+    <style name="DefaultTheme.CosmicTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#9e9e9e</item>
+        <item name="colorPrimaryVariant">#FF1616</item>
+    </style>
+
+</resources>
