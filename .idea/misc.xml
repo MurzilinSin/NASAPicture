@@ -3,9 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Web/AndroidStudioProjects/PictureNasa/app/src/main/res/drawable/splash_background_drawable.xml" value="0.3828125" />
+        <entry key="..\:/Web/AndroidStudioProjects/PictureNasa/app/src/main/res/font/dekko.xml" value="0.396875" />
+        <entry key="..\:/Web/AndroidStudioProjects/PictureNasa/app/src/main/res/layout/activity_splash.xml" value="0.36666666666666664" />
+        <entry key="..\:/Web/AndroidStudioProjects/PictureNasa/app/src/main/res/layout/fragment_apod.xml" value="0.36666666666666664" />
+        <entry key="..\:/Web/AndroidStudioProjects/PictureNasa/app/src/main/res/layout/fragment_apod_end.xml" value="0.33" />
+        <entry key="..\:/Web/AndroidStudioProjects/PictureNasa/app/src/main/res/layout/fragment_apod_start.xml" value="0.36666666666666664" />
+        <entry key="..\:/Web/AndroidStudioProjects/PictureNasa/app/src/main/res/layout/fragment_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Web/AndroidStudioProjects/PictureNasa/app/src/main/res/layout/fragment_main_start.xml" value="0.36666666666666664" />
         <entry key="..\:/Web/AndroidStudioProjects/PictureNasa/app/src/main/res/layout/fragment_mars_photos.xml" value="0.25815217391304346" />
         <entry key="..\:/Web/AndroidStudioProjects/PictureNasa/app/src/main/res/layout/fragment_mars_photos2.xml" value="0.36666666666666664" />
         <entry key="..\:/Web/AndroidStudioProjects/PictureNasa/app/src/main/res/layout/fragment_rover_photo.xml" value="0.25815217391304346" />
+        <entry key="..\:/Web/AndroidStudioProjects/PictureNasa/app/src/main/res/layout/main_activity.xml" value="0.36666666666666664" />
         <entry key="..\:/Web/AndroidStudioProjects/PictureNasa/app/src/main/res/layout/recycler_view_mars_item.xml" value="0.36666666666666664" />
         <entry key="..\:/Web/AndroidStudioProjects/PictureNasa/app/src/main/res/layout/recyclerview_mars_item.xml" value="0.33" />
         <entry key="..\:/Web/AndroidStudioProjects/PictureNasa/app/src/main/res/layout/test.xml" value="0.25815217391304346" />

@@ -3,9 +3,9 @@ package com.example.picturenasa.ui.main
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.picturenasa.R
-import com.example.picturenasa.ui.main.view.SettingsFragment
-import com.example.picturenasa.ui.main.view.MainFragment
-import com.example.picturenasa.ui.main.view.MarsRoverPhotoFragment
+import com.example.picturenasa.ui.main.view.settings.SettingsFragment
+import com.example.picturenasa.ui.main.view.main.MainFragment
+import com.example.picturenasa.ui.main.view.mars.MarsRoverPhotoFragment
 
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -13,7 +13,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        
         setContentView(R.layout.main_activity)
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
@@ -49,9 +48,6 @@ class MainActivity : AppCompatActivity() {
                 }
                 else -> false
             }
-
         }
     }
-
-
 }
